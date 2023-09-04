@@ -66,6 +66,13 @@ spec:
         workspaces:
           - name: source
             workspace: source
+      - name: greeting
+        taskRef:
+          apiVersion: tekton.dev/v1beta1
+          kind: Pipeline
+          name: good-morning-good-afternoon
+        runAfter:
+          - hello
   podTemplate:
     securityContext:
       fsGroup: 65532

@@ -72,7 +72,7 @@ spec:
           kind: Pipeline
           name: good-morning-good-afternoon
         runAfter:
-          - hello
+          - fetch-repository
   podTemplate:
     securityContext:
       fsGroup: 65532

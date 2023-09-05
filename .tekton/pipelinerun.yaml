@@ -70,7 +70,12 @@ spec:
         taskRef:
           apiVersion: tekton.dev/v1beta1
           kind: Pipeline
-          name: good-morning-good-afternoon
+          resolver: git
+          params:
+            - name: url
+              value: https://github.com/FelixZ92/pac-demo.git
+            - name: pathInRepo
+              value: .tekton/pipelinerun.yaml
         runAfter:
           - fetch-repository
   podTemplate:
